@@ -1,0 +1,201 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application BUT this cause problem to mobile layout if you give max-width in pixel. So better comment it.
+  */
+  html, body {
+    /* height: 100%;  */
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+/* Custom Properties */
+:root{
+    --clr-violet : hsl(257, 40%, 49%);
+    --clr-soft-magenta :hsl(300, 69%, 71%);
+
+    /* Font family */
+    --ff-body: 'Open Sans', sans-serif;
+    --ff-heading: 'Poppins', sans-serif;
+}
+
+/* General Styling */
+body{
+  font-family:var(--ff-body);
+
+  display: grid;
+  place-content: center;
+}
+
+
+.huddle{
+    display: flex;
+    flex-direction: column;
+    max-width: 23.4rem;
+    background-color: var(--clr-violet);
+    background-image: url(./images/bg-mobile.svg); 
+    background-repeat: no-repeat;
+    background-size: 100% 52%;
+}
+
+.upper{
+    padding: 2.5rem 2.5rem 2.5rem 3rem;
+}
+
+.huddle__logo{
+    max-width: 7.5rem;
+}
+
+.huddle__mockups{
+    padding-top: 4.5rem;
+}
+
+.lower{
+    padding: 0.5rem 2.5rem 2.5rem 3rem;
+    /* display: grid; */
+}
+
+.huddle__heading{
+    text-align: center;
+    font-weight: 700;
+    color: white;
+}
+
+.huddle__description{
+    padding: 2rem 0;
+    text-align: center;
+    color: white;
+}
+
+.button{
+    padding: 0.5rem 4rem;
+    margin: 0 3rem;
+    border-radius: 2rem;
+    color: var(--clr-violet);
+    border: 0;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: var(--clr-soft-magenta);
+}
+
+.social-icon {
+    width: 100%;
+    margin: 1rem 1rem 0 0;
+    padding: 3rem 3rem 1rem 5rem;
+}
+
+
+span > .fa-facebook-f{
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2rem;
+}
+
+span > .fa-twitter,
+span > .fa-instagram{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1rem;
+    color: white;
+    border: 1px solid white;
+    border-radius: 2rem;
+}
+
+span > .fa-twitter{
+    margin: 0 0.5rem;
+}
+
+.fa-brands:hover{
+    cursor: pointer;
+    color: var(--clr-soft-magenta);
+    border: 1px solid var(--clr-soft-magenta);
+}
+
+
+@media (min-width: 600px) {
+    .upper{
+        padding: 2.5rem 2.5rem 4rem 3rem;
+    }
+    .lower{
+        padding: 2rem 2.5rem 0 3rem;
+    }
+    .huddle{
+        flex-direction: row;
+        min-width: 75.5rem;
+        background-image: url(./images/bg-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: 85% 100%;
+        margin-top: 5rem;
+    }
+
+    .huddle__logo{
+        max-width: 10rem;
+    }
+
+    .huddle__mockups{
+        min-width: 35rem;
+        padding-top: 3.5rem;
+    }
+    .huddle__heading{
+        font-size: 2rem;
+        padding-top: 7rem;
+        padding-right: 7rem;
+        text-align: left;
+    }
+    .huddle__description {
+        padding: 1rem 2.5rem 0.5rem 0;
+        text-align: left;
+        font-size: 0.925rem;
+    }
+
+    .button{
+        margin: 1rem 0 0 0;
+        padding: 0.5rem 3rem;
+    }
+
+    .social-icon{
+        margin-top: 6rem;
+        display: flex;
+        justify-content: end;
+    }
+    
+}
